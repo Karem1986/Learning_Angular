@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/',
+    pathMatch: 'full', //user can go back to home page
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./products/products.module').then((m) => m.ProductsModule),
