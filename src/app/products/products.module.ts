@@ -4,14 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { DressesComponent } from './dresses/dresses.component';
-const routes: Routes = [{ path: 'products', component: DressesComponent }];
 @NgModule({
-  declarations: [],
+  declarations: [DressesComponent],
   imports: [
     CommonModule,
-    AppRoutingModule,
-    BrowserModule,
-    RouterModule.forRoot(routes),
+
+    RouterModule.forChild([
+      {
+        path: 'products',
+        component: DressesComponent,
+      },
+    ]),
   ],
+  exports: [DressesComponent],
 })
 export class ProductsModule {}
